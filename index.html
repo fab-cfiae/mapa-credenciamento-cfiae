@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa de Credenciamento - CFIAe</title>
-    <!-- Linha do Favicon (Ícone da aba) -->
+    
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="header-cfiae">
-        <!-- Barra Superior Principal -->
         <div class="top-bar">
             <div class="header-container">
                 <img src="logo.png" alt="Logo CFIAe" class="header-logo">
-                
                 <div class="header-titles">
                     <span class="sub-title">Força Aérea Brasileira</span>
                     <h1 class="main-title">Caixa de Financiamento<br>Imobiliário da Aeronáutica</h1>
                 </div>
             </div>
         </div>
-
-        <!-- Sub-barra Azul Escuro com o Slogan -->
         <div class="sub-bar">
             <div class="sub-bar-container">
                 <span class="slogan">"UM SONHO, UM IDEAL, UMA MORADIA DIGNA!"</span>
@@ -31,13 +27,30 @@
         </div>
     </header>
 
-    <!-- Área principal centralizada -->
     <main class="main-content">
         <div class="map-container">
             <object data="mapa_brasil.svg" type="image/svg+xml" id="mapa"></object>
-            <div id="tooltip" class="tooltip hidden"></div>
         </div>
     </main>
+
+    <!-- Modal para Exibição das Empresas Credenciadas -->
+    <div id="modal-empresas" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            
+            <div class="modal-header">
+                <h2 id="modal-region-title" class="modal-title">Região</h2>
+                <span id="modal-badge" class="modal-badge">0 empresa(s)</span>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-subtitle">Empresas Credenciadas Habilitadas:</p>
+                <ul id="modal-empresas-list" class="modal-list">
+                    <!-- Empresas injetadas via JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
